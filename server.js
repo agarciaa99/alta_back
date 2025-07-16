@@ -41,8 +41,8 @@ app.post("/generar-contrato", (req, res) => {
   try {
     doc.render();
   } catch (error) {
-    console.error("Error al generar el contrato", error);
-    return res.status(500).send("Error al generar el documento");
+    console.error("Error al generar el contrato.", error);
+    return res.status(500).send("Error al generar el documento.");
   }
 
   const buffer = doc.getZip().generate({ type: "nodebuffer" });
